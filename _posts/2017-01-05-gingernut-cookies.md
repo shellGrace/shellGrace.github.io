@@ -1,4 +1,4 @@
----
+<!-- ---
 date: 2017-01-05
 title: Gingernut Cookies
 categories:
@@ -35,4 +35,4 @@ Little Gavin loves them.
 
 ![Cookie](https://source.unsplash.com/YnrSLOAjOEA)
 
-Delicious!
+Delicious! -->

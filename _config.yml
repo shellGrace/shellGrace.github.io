@@ -8,7 +8,7 @@ google_analytics_key:
 newsletter_action:
 disqus_shortname:
 
-# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+# Values for the jekyll-seo-tag gem (https://github.com/shellGrace)
 logo: /siteicon.png
 description: Food blog template for Jekyll.
 author:
@@ -18,7 +18,7 @@ author:
 social:
   name: Treat Template
   links:
-    - https://github.com/CloudCannon/treat-jekyll-template
+    - https://github.com/shellGrace
 
 # -----
 # Build
@@ -71,7 +71,7 @@ exclude:
   - LICENCE
 
 # -----------
-# CloudCannon
+# shellGrace
 
 social_icons:
   - Facebook
