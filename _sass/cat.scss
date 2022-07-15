@@ -1,0 +1,9 @@
+.cat-box {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    .box {
+        width: 220px;
+        height: 130px;
+    }
+}
