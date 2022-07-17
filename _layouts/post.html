@@ -2,7 +2,8 @@
 layout: default
 ---
 <article class="post">
-	{% include post-heading.html post=page post_page=true %}
+	{% include post-heading.html post=post %}
+	<!-- {% include post-heading.html post=page post_page=true %} -->
 	<div class="image">
 		<img src="{{ page.featured_image }}" alt="{{ page.title }}">
 	</div>
