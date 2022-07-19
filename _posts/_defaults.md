@@ -10,3 +10,53 @@ recipe:
   ingredients_markdown:
   directions_markdown:
 ---
+在数学的数值分析领域中，贝塞尔曲线（英语：Bézier curve）是计算机图形学中相当重要的参数曲线。更高维度的广泛化贝塞尔曲线就称作贝兹曲面，其中贝兹三角是一种特殊的实例。
+
+贝塞尔曲线于1962年，由法国工程师皮埃尔·贝兹（Pierre Bézier）所广泛发表，他运用贝塞尔曲线来为汽车的主体进行设计。贝塞尔曲线最初由保尔·德·卡斯特里奥于1959年运用德卡斯特里奥算法开发，以稳定数值的方法求出贝塞尔曲线。 -维基百科
+
+为建构二次贝塞尔曲线，可以中介点Q0和Q1作为由0至1的t：
+
+由P0至P1的连续点Q0，描述一条线性贝塞尔曲线。
+由P1至P2的连续点Q1，描述一条线性贝塞尔曲线。
+由Q0至Q1的连续点B（t），描述一条二次贝塞尔曲线。
+
+cubic-bezier() 函数定义了一个贝塞尔曲线(Cubic Bezier)。
+
+贝塞尔曲线曲线由四个点 P0，P1，P2 和 P3 定义。P0 和 P3 是曲线的起点和终点。P0是（0,0）并且表示初始时间和初始状态，P3是（1,1）并且表示最终时间和最终状态。
+
+cubic-bezier 的取值范围:
+P0：默认值 (0, 0)
+P1：动态取值 (x1, y1)  // x1,y1,x2,y2	必需。数字值，x1 和 x2 需要是 0 到 1 的数字。
+P2：动态取值 (x2, y2)
+P3：默认值 (1, 1)
+
+将以一条直线放在范围只有 1 的坐标轴中，并从中间拿出两个点来拉扯（X 轴的取值区间是 [0, 1]，Y 轴任意），最后形成的曲线就是动画的速度曲线
+
+cubic-bezier() 可用于 animation-timing-function 和 transition-timing-function 属性。
+
+CSS3 animation-timing-function 属性
+从开始到结束以相同的速度播放动画:
+```tsx
+animation-timing-function:linear;
+-webkit-animation-timing-function:linear; /* Safari and Chrome */
+```
+animation-timing-function使用的数学函数，称为三次贝塞尔曲线，速度曲线。
+因此，cubic-bezier 可作为参数，描述曲线运动速度，从而绘制曲线
+cubic-bezier(n,n,n,n) 在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。
+
+
+CSS3 transition-timing-function 属性
+过渡效果以同样的速度从开始到结束：
+```
+transition-timing-function: linear;
+-webkit-transition-timing-function: linear; /* Safari and Chrome */
+transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n);
+```
+cubic-bezier(n,n,n,n) 在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值。
+
+```tsx
+cubic-bezier(x1,y1,x2,y2)
+```
+
+区别看这篇：
+https://blog.logrocket.com/understanding-animation-transition-timing-functions-css/
