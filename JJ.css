@@ -1,0 +1,96 @@
+body {
+     background-image: url("./photo/yinfu.jpg");
+     font: 13px/2em Verdana, Helvetica, Arial, sans-serif;
+}
+
+
+audio {
+        margin: 10px auto;
+        width: 260px;
+        height: 60px;
+        /* background: #B0E0E6 no-repeat center bottom; */
+        background-size:cover;
+}
+h1, h2 {
+  color: #007e7e;
+}
+
+h1 {
+  font-size: 220%;
+  text-align: center;
+  border-bottom: 0.5px solid black;
+}
+
+h2 {
+  font-size: 130%;
+}
+h4 {
+    font-size: 130%;
+    color: #B0E0E6;
+
+}
+#elixirs {
+  color: #444444;
+  background-color: white;
+  border: thin solid #007e7e;
+  width: 530px;
+  padding: 0px 20px 20px 20px;
+  margin-left: 20px;
+  /*text-align: auto;*/
+
+  line-height: 1.6;
+  float: right;
+}
+
+#elixirs h2 {
+  color: black;
+}
+
+#elixirs h3 {
+  color: #d12c47;
+}
+
+#footer {
+  font-size: 50%;
+  text-align: center;
+  line-height: normal;
+  margin-top: 30px;
+}
+
+.cd {
+  font-style: italic;
+}
+
+.artist {
+  font-weight: bold;
+}
+
+a:link {
+  color: #007e7e;
+}
+
+a:visited {
+  color: #333333;
+}
+
+#elixirs a:link {
+  color: #007e7e;
+}
+
+#elixirs a:visited {
+  color: #333333;
+}
+
+#elixirs a:hover {
+  background: #f88396;
+  color: #0d5353;
+}
+p:first-letter {
+    font-size: 1.5em;
+}
+/* p:first-line {
+    font-style: italic;
+} */
+/* img[width] { border: black thin solid; }
+img[height="300"] { border: red thin solid; }
+img[alt~="flowers"] { border: #ccc thin solid; } */
