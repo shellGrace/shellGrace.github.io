@@ -1,0 +1,31 @@
+.cat-box {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    .box {
+        width: 213px;
+        height: 135px;
+        margin: 10px;
+    }
+    .bag3 {
+        background-image: url('../images/3.jpg'); 
+    }
+    .bag5 {
+        background-image: url('../images/5.jpg'); 
+    }
+    .bag6 {
+        background-image: url('../images/6.jpg'); 
+    }
+    .bag7 {
+        background-image: url('../images/7.jpg'); 
+    }
+    .bag8 {
+        background-image: url('../images/8.jpg'); 
+    }
+    .bag9 {
+        background-image: url('../images/9.jpg'); 
+    }
+    .bag10 {
+        background-image: url('../images/10.jpg'); 
+    }
+}

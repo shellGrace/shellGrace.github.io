@@ -1,88 +1,33 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Love JJ Lin</title>
-    <link type="text/css" rel="stylesheet" href="index.css">
-  </head>
-  <body>
-      <h1>Love JJ Lin</h1>
-    <div id="elixirs">
-        <br>
-    <p><img src="./photo/jj1.jpg"</p>
-      <h2>JJ Lin</h2>
-      <h3>个人简介</h3>
-      <p>
-        林俊杰（JJ Lin），1981年3月27日出生于新加坡，华语流行乐男歌手、词曲创作者、音乐制作人。
-      </p>
-      <p>
-        2003年发行首张创作专辑《乐行者》。
-        2004年凭专辑《第二天堂》中的歌曲《江南》获得广泛关注。
-        2014年以专辑《因你而在》夺得第25届台湾金曲奖最佳国语男歌手奖。
-        2016年以专辑《和自己对话》获得第27届台湾金曲奖最佳国语男歌手奖，
-        并推出个人首部音乐纪录片《听·见林俊杰》。
-        截止到2017年，已发行13张正式专辑，累计创作数百首歌曲。
-        2004年、2015年两度受邀演唱新加坡国庆庆典主题曲，
-        2019年4月6日，林俊杰“圣所2.0”世界巡回演唱会将在苏州市体育中心体育场上演。
-      </p>
-    </div>
-<div class="mp3">
-    <h4>林俊杰-记得</h4>
-    <audio src="./music/song.mp3" controls>
-        Sorry but audio is not supported in browser.
-    </audio><br>
-    我依然清晰记得跟你说过的话，跟你聊过的事，我记得你对我的评价，
-    记得你说的玩笑或者是真话。我记得你跟我说过的第一句话，
-    也记得你跟我说的最后一句话。我记得你跟我说过好听的话，
-    也记得你对我说过残忍的话，这么多的话我不知道我还会记得多久，你还会记得多久……
-    <h4>林俊杰-可惜没如果</h4>
-    <audio src="./music/song1.mp3" controls>
-        Sorry but audio is not supported in browser.
-    </audio><br>
-    从异地来找你本想给你一个惊喜，很意外没想到你手机里男生一句玩笑话让我瞬间失落。
-    回去的路上我走了一个小时，重复听着只想一生只想跟你走这首歌思绪很乱，
-    直到确认了是误会后才有种从坠入万丈深渊被拉回来的感觉。这次回来只想告诉你，
-    只因为这城市有你，才会驻足停留，多想告诉你我的心里装的都是你
-    <h4>林俊杰-Love U U</h4>
-    <audio src="./music/song2.mp3" controls>
-        Sorry but audio is not supported in browser.
-    </audio><br>
-    电影看过三遍 一直深刻的一段话是 "从前有个渔夫 爱上了一个女孩
-    但女孩总是把心藏在海底 渔夫怎么样都打捞不到 只好把自己变成一位厨师
-    他试着把女孩的心做成甜点 这个甜点的名字就叫做海底之心"
-    <h4>林俊杰-小酒窝</h4>
-    <audio src="./music/song6.mp3" controls>
-        Sorry but audio is not supported in browser.
-    </audio><br>
-    这首歌刚出的时候我读高一，我把它下载到我的诺基亚里用蓝牙传给了前桌女生，
-    于是我俩慢慢的无聊变得有话聊~她没追我，我也没追她，
-    但是慢慢的我们就在一起了，到今天已经将近八年了，烦恼彼此的烦恼，
-    快乐彼此的快乐。虽然她没有小酒窝，没有长睫毛，但是依然迷人的无可救药！哈哈哈~
-    <h4>林俊杰-她说</h4>
-    <audio src="./music/song4.mp3" controls>
-        Sorry but audio is not supported in browser.
-    </audio><br>
-    老林说：如果有人问我 想做出怎样的音乐 那我会这样说
-    我希望可以写出一种歌 譬如有一天 在半夜的便利商店
-    有一个女生走进来 她刚刚失恋了 心情很差 然后
-    她从店里的广播节目 听到一首歌 那首歌 刚好说中她的心情
-    让她觉得自己不是寂寞的一个人 有人听见她心里的声音
-</div>
-<br>
-<br>
-<br>
-    <div id="footer">
-      <small>
-        &copy; 2019, Love JJ Lin<br>
-        本网页为个人爱好所作，非商业用途，如有侵权请告知。
-        本网页为个人爱好所作，非商业用途，如有侵权请告知。
-      </small>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-    </div>
-  </body>
-</html>
+---
+title: Home
+---
+<section class="posts">
+	{% for post in paginator.posts %}
+		<article class="post">
+			{% include post-heading.html post=post %}
+			<!-- {% if post.featured_image !== '-' %}
+			<div class="image">
+				<img src="{{ post.featured_image }}" alt="{{ post.title }}">
+			</div>
+			{% endif %} -->
+
+			{{ post.excerpt }}
+
+			<p><a class="button" href="{{ site.baseurl }}{{ post.url }}">Read more</a></p>
+		</article>
+	{% endfor %}
+
+	{% if paginator.total_pages > 1 %}
+		<div class="pagination">
+			{% if paginator.previous_page %}
+				<a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="previous btn">&larr; Newer posts</a>
+			{% endif %}
+
+			<span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+			{% if paginator.next_page %}
+				<a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next btn">Older posts &rarr;</a>
+			{% endif %}
+		</div>
+	{% endif %}
+</section>
