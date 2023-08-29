@@ -7,6 +7,33 @@ featured_image: images/js.jpg
 ---
 ## bind
 bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。
+```javascript
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    getFullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+// 创建一个新函数，将person作为上下文
+const fullNameGetter = person.getFullName.bind(person);
+
+console.log(fullNameGetter()); // 输出 "John Doe"
+```
+
+```javascript
+function greet(greeting) {
+    return greeting + ", " + this.name;
+}
+
+const greetJohn = greet.bind({ name: "John" });
+
+console.log(greetJohn("Hello")); // 输出 "Hello, John"
+console.log(greetJohn("Hi"));    // 输出 "Hi, John"
+
+```
+
 
 ## apply
 ```javascript
@@ -21,8 +48,9 @@ var person1 = {
 }
 person.fullName.apply(person1);  // 将返回 "Bill Gates"
 ```
-person.fullName 中的 this 会去 person1中寻找
-fullName 变更为箭头函数，返回 undefined undefined。原因：箭头函数的 this 始终指向定义时所在的上下文，而不是调用时的上下文
+person.fullName 中的 this 会去 person1 中寻找
+
+注意：fullName 变更为箭头函数，返回 undefined undefined。原因：箭头函数的 this 始终指向定义时所在的上下文，而不是调用时的上下文
 
 ## call
 ```javascript
