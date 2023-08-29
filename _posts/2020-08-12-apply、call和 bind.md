@@ -22,6 +22,7 @@ var person1 = {
 person.fullName.apply(person1);  // 将返回 "Bill Gates"
 ```
 person.fullName 中的 this 会去 person1中寻找
+fullName 变更为箭头函数，返回 undefined undefined。原因：箭头函数的 this 始终指向定义时所在的上下文，而不是调用时的上下文
 
 ## call
 ```javascript
